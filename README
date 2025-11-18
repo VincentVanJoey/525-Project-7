@@ -15,7 +15,7 @@
 
 -- "Brief Narrative" of results - Joey Monaco --
 
-OLD EXPLANATION FROM FOR TODO CHANGE:
+-- OLD EXPLANATION FROM JOEY'S #4:--
 Setup:
 --> make clean, make, clear
 --> Start directory server with ./directoryServer2 
