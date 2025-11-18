@@ -1,0 +1,34 @@
+
+1. Copy the files to your own directory.
+
+2. Modify inet.h to reflect the host you are currently logged into.
+   Also, modify the port numbers to be used to reduce the likelihood
+   of conflicting with another server.
+
+3. Compile the source code using the command: make
+
+4. Start the chat and directory servers in the background: ./directoryServer3 &; ./chatServer3 &
+
+5. Start the client on the same or another host in the foreground: ./chatClient2
+
+6. Remember to kill the server before logging off.
+
+-- "Brief Narrative" of results - Joey Monaco --
+
+OLD EXPLANATION FROM FOR TODO CHANGE:
+Setup:
+--> make clean, make, clear
+--> Start directory server with ./directoryServer2 
+--> Start an amount of servers with calls with the following parameters replaced ./chatServer2 ["topic"] [port]
+   --> throw an & on the end to run it in the background of the terminal
+   --> assuming no duplicate topics and availible ports, this will register the chat server and start it on the desired port
+--> connect to the directory by initializing a chat client with ./chatClient2 and then entering a number from the list of servers given (if any)
+
+From here, all implementation should line up with the chat server implementation from Assignment 3, with the extra layer of the directory server.
+The Directory Server is queried upon a client's initial connection for a list of active Chat Server Topic/IP addresses/ports.
+Clients can only select from the given servers listed, and must disconnect/reconnect to the directory for an updated list.
+
+When a chat server exits(or crashes), the directory server will note it is De-registered, freeing the server's a topic
+--> very similar to the nicknames of clients from the last one.
+
+All implementation otherwise works as described in the assignment!
